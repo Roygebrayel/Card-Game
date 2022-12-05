@@ -1,5 +1,3 @@
-// linked list for a player
-
 struct Player{
 	int name;
 	Player* next;
