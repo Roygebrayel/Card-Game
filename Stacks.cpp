@@ -25,7 +25,7 @@ struct card
 
  void initialize(card *&top)
 {
-	Top = NULL;
+	top = NULL;
 	
 }
 
@@ -61,7 +61,7 @@ card *pop(card *top, type &val) // val can be *val so we:
 {
 	if (isEmpty(top))
 		return NULL;
-	val = top->data; //*val
+	val = top->data;
 	card *tmp;
 	tmp = top->next;
 	delete top;
@@ -76,7 +76,7 @@ void Display(card *top)
 	int value;
 	while (!isEmpty(top))
 	{
-		top = pop(top, value) //&val
+		top = pop(top, value);
 			  cout
 			  << val << " ";
 	}
