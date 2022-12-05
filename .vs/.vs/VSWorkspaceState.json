@@ -1,10 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Card-Game",
-    "\\Card-Game\\v16",
-    "\\Card-Game\\v16\\TestStore\\0"
+    "\\Card-Game"
   ],
-  "SelectedNode": "\\Card-Game\\v16\\TestStore",
+  "SelectedNode": "\\slnx.sqlite",
   "PreviewInSolutionExplorer": false
 }
