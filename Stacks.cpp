@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string>
 # include <iostream>
 using namespace std;
 
@@ -12,12 +11,6 @@ struct card
 	card *next;
 };
 // struct of player
-struct player{
-    int index;
-    card cardInHand;
-
-
-};
 
 //initializing card struct
 
