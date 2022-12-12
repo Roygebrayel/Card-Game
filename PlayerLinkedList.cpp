@@ -40,7 +40,7 @@ Player* Search(List L, string val){
 	Player* curr2;
 	if(isEmpty(L)){
 		cout<<"empty";
-		return;
+		return NULL;
 	}
 	curr1 = L.head;
 	curr2 = L.rear;
