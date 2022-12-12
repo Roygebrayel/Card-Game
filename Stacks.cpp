@@ -3,15 +3,6 @@
 # include <iostream>
 using namespace std;
 
-// struct of player
-struct player{
-	int index;
-	card cardInHand;
-
-
-};
-
-
 //struct of card
 struct card
 {
@@ -20,7 +11,13 @@ struct card
 	string type;
 	card *next;
 };
+// struct of player
+struct player{
+    int index;
+    card cardInHand;
 
+
+};
 
 //initializing card struct
 
