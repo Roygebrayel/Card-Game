@@ -4,14 +4,15 @@
 using namespace std;
 int main(){
     cout<<"This game will auto play a game of likha between 4 bots and will outcome one loser";
-    cout<<"ssssss";
-    Player player1, player2, player3, player4;
-    List PlayerList;
-    initializePlayer(player1,"p1",0);
-    initializePlayer(player2,"p2",0);
-    initializePlayer(player3,"p3",0);
-    initializePlayer(player4,"p4",0);
+    Player p1,p2,p3,p4;
+        List PlayerList;
+        p1 = initializePlayer(p1,"sergio",0);
+        p2 = initializePlayer(p2,"abbas",0);
+        p3 = initializePlayer(p3,"roy",0);
+        p4 = initializePlayer(p4,"georges",0);
 
-    AddPlayersInList(player1,player2,player3,player4,PlayerList);
-    printH2R(PlayerList);
+        initialize(PlayerList);
+        
+        AddPlayersInList(p1,p2,p3,p4,PlayerList);
+        printH2R(PlayerList);
 }

@@ -1,8 +1,14 @@
 # include <iostream>
 # include <stdio.h>
-# include "Stacks.cpp"
 using namespace std;
 
+struct card
+{
+
+	int value;
+	string type;
+	card *next;
+};
 
 struct Player{
 	string name;
@@ -34,7 +40,7 @@ void printH2R(List L)
 	}
 	Player* curr = L.head;
 	while(curr!= NULL){
-		cout<<curr ->name<<" ";
+		cout<<curr ->name<<" "<<curr->score<<" "<<endl;
 		curr = curr -> next;
 	}
 }

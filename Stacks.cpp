@@ -10,12 +10,6 @@ struct card
 	string type;
 	card *next;
 };
-// struct of player
-
-//initializing card struct
-
-
-
  void initialize(card *&top)
 {
 	top = NULL;
