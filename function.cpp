@@ -2,6 +2,9 @@
 #include <iostream>
 #include <string>
 #include <cstddef>
+#include <string.h>
+
+
 using namespace std;
 
 struct cardHand{
