@@ -1,8 +1,15 @@
+
+#include <iostream>
+#include <string>
+#include <cstddef>
+#include <string.h>
+
+
 using namespace std;
-# include <iostream>
+
 struct cardHand{
 int val;
-String type;
+string type;
 
 cardHand *next;
 };
@@ -11,14 +18,14 @@ cardHand* front;
 cardHand* rear;
 };
 bool IsEmpty(QUEUECard q){
-return (q.front==Null);
+return (q.front==NULL);
 }
 void InitializeQueue(QUEUECard &q){
 q.front=NULL;
 q.rear=NULL;
 }
 
-void Enqueue (QUEUECard&q, int val,String type)
+void Enqueue (QUEUECard&q, int val,string type)
 {
 cardHand *tmp = new cardHand;
 tmp->next=NULL;
@@ -45,7 +52,7 @@ cout<<"Empty";
 return;
 }
 val = q.front->val;
-type = q.front ->type;
+string = q.front -> string;
 
 tmp = q.front->next;
 delete q.front;
@@ -62,7 +69,7 @@ return;
 }
 cout<<"The content of the stack is: "<<endl;
 while(!IsEmpty(q)){
-Dequeue (q, val,type);
+Dequeue (q, val,int);
 cout << val << "";
 cout<<type<<" ";
 }
