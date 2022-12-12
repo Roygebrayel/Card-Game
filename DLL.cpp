@@ -1,3 +1,7 @@
+# include<stdio.h>
+#include <iostream>
+using namespace std;
+
 
 
 struct Node{
@@ -24,12 +28,12 @@ List initialize(){
 }
 
 bool isEmpty(List L){
-	return(L.head == NULL || rear == NULL)
+	return(L.head == NULL || L.rear == NULL);
 }
 
 void printH2R(List L)
 {
-	if(isEmpty(l)){
+	if(isEmpty(L)){
 		cout<<"empty";
 		return;
 	}
@@ -41,7 +45,7 @@ void printH2R(List L)
 }
 
 void printR2H(List L){
-	if(isEmpty(l)){
+	if(isEmpty(L)){
 		cout<<"empty";
 		return;
 	}
@@ -53,8 +57,9 @@ void printR2H(List L){
 }
 
 Node* Search(List L, int val){
-	Node* curr;
-	if(isEmpty(l)){
+	Node* curr1;
+	Node* curr2;
+	if(isEmpty(L)){
 		cout<<"empty";
 		return;
 	}
@@ -125,8 +130,8 @@ void insertSorted(List&L,int val)
 	tmp->next = curr->next;
 	tmp->prev = curr;
 	curr->next->prev = tmp;
-	curr ->next = tmp
-	}
+	curr ->next = tmp;
+}
 	
 	void RemoveNode(List L, int val){
 		Node *tmp,*curr;
@@ -149,8 +154,8 @@ void insertSorted(List&L,int val)
 		L.rear->next = NULL;
 		delete L.rear;
 		L.rear = tmp;
-		return
 		return;
+		
 	}
 	curr = L.head;
 	while(curr!=NULL && curr-> data != val)
@@ -163,6 +168,7 @@ void insertSorted(List&L,int val)
 	curr->prev->next = curr->next;
 	delete curr;
 	}
+	
 	
 		
 
