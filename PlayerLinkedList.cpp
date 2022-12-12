@@ -93,7 +93,7 @@ void insertAtRear(List& L, string val) {
 	L.rear = tmp;
 }
 	
-	void RemovePlayer(List L, int val){
+	void RemovePlayer(List L, string val){
 		Player *tmp,*curr;
 		if(isEmpty(L))
 	{
@@ -109,7 +109,7 @@ void insertAtRear(List& L, string val) {
 		return;
 	}
 	//if at rear
-	if(L.head->Player.neme == val){
+	if(L.head->name == val){
 		tmp = L.rear;
 		L.rear->next = NULL;
 		delete L.rear;
@@ -117,7 +117,7 @@ void insertAtRear(List& L, string val) {
 		return;
 	}
 	curr = L.head;
-	while(curr!=NULL && curr->Player.name != val)
+	while(curr!=NULL && curr->name != val)
 		curr = curr->next;
 	if(curr == NULL){
 		cout<<"not found";
