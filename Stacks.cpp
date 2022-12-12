@@ -1,4 +1,7 @@
-
+#include <stdio.h>
+#include <string>
+# include <iostream>
+using namespace std;
 
 // struct of player
 struct player{
@@ -38,13 +41,13 @@ bool isEmpty(card *top)
 
 // push function
 
-card *push(card top, card val)
+card *push(card *top, int val)
 {
 	card *tmp = new card;
 	if (tmp == NULL)
 		exit(1);
-	tmp->data = value;
-					tmp->next = NULL;
+	tmp->value = val;
+	tmp->next = NULL;
 	if (isEmpty(top))
 	{
 		top = tmp;
@@ -57,11 +60,11 @@ card *push(card top, card val)
 
 // pop function
 
-card *pop(card *top, type &val) // val can be *val so we:
+card *pop(card *top, int &val) // val can be *val so we:
 {
 	if (isEmpty(top))
 		return NULL;
-	val = top->data;
+	val = top->value;
 	card *tmp;
 	tmp = top->next;
 	delete top;
@@ -77,7 +80,6 @@ void Display(card *top)
 	while (!isEmpty(top))
 	{
 		top = pop(top, value);
-			  cout
-			  << val << " ";
+			  cout << value << " ";
 	}
 }
