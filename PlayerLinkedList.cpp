@@ -1,5 +1,9 @@
+# include <iostream>
+# include <stdio.h>
+using namespace std;
+
 struct Player{
-	int name;
+	string name;
 	Player* next;
 	Player* prev;
 };
@@ -15,7 +19,7 @@ void initialize(List &L){
 }
 
 bool isEmpty(List L){
-	return(L.head == NULL || rear == NULL)
+	return(L.head == NULL || L.rear == NULL);
 }
 
 void printH2R(List L)
@@ -24,25 +28,26 @@ void printH2R(List L)
 		cout<<"empty";
 		return;
 	}
-	Node* curr = L.head;
+	Player* curr = L.head;
 	while(curr!= NULL){
-		cout<<curr -> Player<<" ";
+		cout<<curr ->name<<" ";
 		curr = curr -> next;
 	}
 }
 
-Node* Search(List L, string val){
-	Node* curr;
-	if(isEmpty(L){
+Player* Search(List L, string val){
+	Player* curr1;
+	Player* curr2;
+	if(isEmpty(L)){
 		cout<<"empty";
 		return;
 	}
 	curr1 = L.head;
 	curr2 = L.rear;
-	while(curr1->next != curr2 && curr2->prev != curr1 || curr1 != curr2){
-		if(curr1->Player.name == val)
+	while(curr1->name != curr2->name && curr2->prev != curr1 || curr1 != curr2){
+		if(curr1->name == val)
 			return curr1;
-		if(curr2->Player.name == val)
+		if(curr2->name == val)
 			return curr2;
 		curr1 = curr1->next;
 		curr2 = curr2->prev;
@@ -55,7 +60,7 @@ void insertAtHead(List &L, string val){
 	tmp = new Player;
 	if(tmp == NULL)
 		exit(1);
-	tmp->Player.name = name;
+	tmp->name = val;
 	tmp->next = NULL;
 	tmp->prev = NULL;
 	if(isEmpty(L))
@@ -74,7 +79,7 @@ void insertAtRear(List& L, string val) {
 	tmp = new Player;
 	if (tmp == NULL)
 		exit(1);
-	tmp->Player.name = name;
+	tmp->name = val;
 	tmp->next = NULL;
 	tmp->prev = NULL;
 	if (isEmpty(L))
@@ -96,7 +101,7 @@ void insertAtRear(List& L, string val) {
 		return;
 	}
 	//if at head 
-	if(L.head->Player.name == val){
+	if(L.head->name == val){
 		tmp = L.head->next;
 		tmp-> prev = NULL;
 		delete L.head;
