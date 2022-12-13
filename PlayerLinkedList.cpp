@@ -1,14 +1,8 @@
 # include <iostream>
 # include <stdio.h>
+# include "Stacks.cpp"
+
 using namespace std;
-
-struct card
-{
-
-	int value;
-	string type;
-	card *next;
-};
 
 struct Player{
 	string name;

@@ -50,7 +50,7 @@ void Dequeue(Queue &Q,string val)
 	Q.front = tmp;
 }
 
-void Display(Queue Q){
+void DisplayQueue(Queue Q){
 	string x;
 	while(isEmpty(Q)==false)
 	{

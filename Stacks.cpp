@@ -5,11 +5,11 @@ using namespace std;
 //struct of card
 struct card
 {
-
 	int value;
 	string type;
 	card *next;
 };
+
  void initialize(card *&top)
 {
 	top = NULL;
@@ -25,12 +25,13 @@ bool isEmpty(card *top)
 
 // push function
 
-card *push(card *top, int val)
+card *push(card *top, int val, string type)
 {
 	card *tmp = new card;
 	if (tmp == NULL)
 		exit(1);
 	tmp->value = val;
+	tmp->type = type;
 	tmp->next = NULL;
 	if (isEmpty(top))
 	{
@@ -44,11 +45,12 @@ card *push(card *top, int val)
 
 // pop function
 
-card *pop(card *top, int &val) // val can be *val so we:
+card *pop(card *top, int &val, string &type) // val can be *val so we:
 {
 	if (isEmpty(top))
 		return NULL;
 	val = top->value;
+	type = top-> type;
 	card *tmp;
 	tmp = top->next;
 	delete top;
@@ -58,12 +60,15 @@ card *pop(card *top, int &val) // val can be *val so we:
 
 // Display function
 
-void Display(card *top)
+void DisplayStack(card *top)
 {
 	int value;
+	string type;
 	while (!isEmpty(top))
 	{
-		top = pop(top, value);
-			  cout << value << " ";
+		top = pop(top, value, type);
+		int i = 1;
+		cout <<"card "<<i<<":"<< value << "of" << type << endl;
+		i++;
 	}
 }

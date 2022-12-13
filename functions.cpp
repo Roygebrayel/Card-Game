@@ -16,3 +16,18 @@ Player initializePlayer(Player p,string name, int score){
     insertAtHead(l,pl2.name,pl2.score);
     insertAtHead(l,pl1.name,pl1.score);
 }
+
+void FillCardStack(card* top){
+    for(int i=0;i<13;i++){
+        top = push(top,i+1,"hearts");
+    }
+    for(int i=0;i<13;i++){
+        top = push(top,i+1,"diamonds");
+    }
+    for(int i=0;i<13;i++){
+        top = push(top,i+1,"spades");
+    }
+    for(int i=0;i<13;i++){
+        top = push(top,i+1,"clubs");
+    }
+}
