@@ -18,6 +18,9 @@ int main(){
     printH2R(PlayerList);
      cout<<"hello1"<<endl;
     FillCardStack(&top);
+    if(!isEmpty(&top))
+     cout<<"not empty"<<endl;
+
     cout<<"FillCardStack is done succesfully"<<endl;
-    DisplayStack(&top);
+    cout<<"tahiyye la verginie"<<endl;
 }

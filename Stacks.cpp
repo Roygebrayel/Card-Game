@@ -60,16 +60,16 @@ card *pop(card *top, int &val, string &type) // val can be *val so we:
 
 // Display function
 
-void DisplayStack(card *top)
+void DisplayStack(card* top)
 {
 	int value;
 	string type;
 	int i = 1;
-	while (!isEmpty(top))
+	for(int j = 0;j<52;j++)
 	{
 		top = pop(top, value, type);
 		
-		cout <<"card "<<i<<":"<< value << "of" << type << endl;
+		cout <<"card "<<i<<": "<< value << " of " << type << endl;
 		i++;
 	}
 }
