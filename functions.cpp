@@ -30,4 +30,5 @@ void FillCardStack(card* top){
     for(int i=0;i<13;i++){
         top = push(top,i+1,"clubs");
     }
+    DisplayStack(top);
 }

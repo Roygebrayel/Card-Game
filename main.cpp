@@ -3,7 +3,7 @@
 #include "functions.cpp"
 using namespace std;
 int main(){
-    cout<<"This game will auto play a game of likha between 4 bots and will outcome one loser";
+    cout<<"This game will auto play a game of likha between 4 bots and will outcome one loser"<<endl;
     Player p1,p2,p3,p4;
     List PlayerList;
     card top;

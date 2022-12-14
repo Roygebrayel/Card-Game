@@ -64,10 +64,11 @@ void DisplayStack(card *top)
 {
 	int value;
 	string type;
+	int i = 1;
 	while (!isEmpty(top))
 	{
 		top = pop(top, value, type);
-		int i = 1;
+		
 		cout <<"card "<<i<<":"<< value << "of" << type << endl;
 		i++;
 	}
