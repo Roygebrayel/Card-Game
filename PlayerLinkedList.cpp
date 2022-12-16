@@ -7,19 +7,24 @@ using namespace std;
 struct Player{
 	string name;
 	int score;
-	card cardInHand;
+	card cardInHand[13];
 	Player* next;
 	Player* prev;
+	card* next1;
 };
 
 struct List{
 	Player* head;
 	Player* rear;
+	card* head1;
 };
 
 void initialize(List &L){
 	L.head = NULL;
 	L.rear = NULL;
+}
+void initializeCardList(List &L){
+	L.head1 = NULL;
 }
 
 bool isEmpty(List L){
@@ -77,6 +82,23 @@ void insertAtHead(List &L, string name, int &score){
 	L.head->prev = tmp;  
 	tmp->next=L.head;    
 	L.head=tmp;          
+}
+
+void insertAtHeadCard(List &L, string type, int &val){
+	card* tmp;
+	tmp = new card;
+	if(tmp == NULL)
+		exit(1);
+	tmp->value = val;
+	tmp->type = type;
+	tmp->nextC = NULL;
+	if(isEmpty(L))
+	{
+		L.head1 = tmp;
+		return;
+	}                      
+	tmp->nextC=L.head1;    
+	L.head1=tmp;          
 }
 
 void insertAtRear(List& L, string name, int score) {

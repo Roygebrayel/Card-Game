@@ -7,10 +7,13 @@ int main(){
     Player p1,p2,p3,p4;
     List PlayerList;
     card top;
-    p1 = initializePlayer(p1,"sergio",0);
-    p2 = initializePlayer(p2,"abbas",0);
-    p3 = initializePlayer(p3,"roy",0);
-    p4 = initializePlayer(p4,"georges",0);
+    card cardEmpty;
+    int random ;
+
+    p1 = fillPlayer(p1,"sergio",0,cardEmpty);
+    p2 = fillPlayer(p2,"abbas",0,cardEmpty);
+    p3 = fillPlayer(p3,"roy",0,cardEmpty);
+    p4 = fillPlayer(p4,"georges",0,cardEmpty);
 
     initialize(PlayerList);
         
@@ -22,5 +25,18 @@ int main(){
      cout<<"not empty"<<endl;
 
     cout<<"FillCardStack is done succesfully"<<endl;
+    for (int i = 0; i < 13; i++)
+    {
+        random= 1 + rand() % 4;
+       cout<<random<<"   ";
+    }
+    
+  cout<<random <<endl;
+    shuffleCards(&top,p1,p2,p3,p4);
+  
+    
+    for(int i = 0 ; i>13;i++){
+        cout<<"value: "<<p1.cardInHand[i].value<<"type: "<<p1.cardInHand[i].type<<endl;
+    }
     cout<<"tahiyye la verginie"<<endl;
 }

@@ -7,7 +7,7 @@ struct card
 {
 	int value;
 	string type;
-	card *next;
+	card *nextC;
 };
 
  void initialize(card *&top)
@@ -32,13 +32,13 @@ card *push(card *top, int val, string type)
 		exit(1);
 	tmp->value = val;
 	tmp->type = type;
-	tmp->next = NULL;
+	tmp->nextC = NULL;
 	if (isEmpty(top))
 	{
 		top = tmp;
 		return top;
 	}
-	tmp->next = top;
+	tmp->nextC = top;
 	top = tmp;
 	return top;
 }
@@ -52,7 +52,7 @@ card *pop(card *top, int &val, string &type) // val can be *val so we:
 	val = top->value;
 	type = top-> type;
 	card *tmp;
-	tmp = top->next;
+	tmp = top->nextC;
 	delete top;
 	top = tmp;
 	return top;
