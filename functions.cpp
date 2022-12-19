@@ -6,7 +6,7 @@
 #include <stdlib.h>
 using namespace std;
 
-Player fillPlayer(Player p, string name, int score,card c)
+Player fillPlayer(Player p, string name, int score, card c)
 {
     p.name = name;
     p.score = score;
@@ -66,28 +66,28 @@ void FillCardStack(card *top)
 //         int j3 = 0;
 //     for (int i = 0; i < 52; i++)
 //     {
-    
+
 //         if (i < 13)
 //         {
-           
+
 //             cp1[j] = pop(sc, sc->value, sc->type);
 //             j++;
 //         }
 //         else if (i >= 13 && i < 26)
 //         {
-           
+
 //             cp2[j1] = pop(sc, sc->value, sc->type);
 //             j1++;
 //         }
 //         else if (i >= 26 && i < 39)
 //         {
-           
+
 //             cp3[j2] = pop(sc, sc->value, sc->type);
 //             j2++;
 //         }
 //         else if (i >= 39 && i < 52)
 //         {
-          
+
 //             cp4[j3] = pop(sc, sc->value, sc->type);
 //             j3++;
 //         }
@@ -211,3 +211,60 @@ void FillCardStack(card *top)
 //     }
 //     cout<<"helloooo"<<endl;
 // }
+
+card maxCards(card *c1[])
+{
+    int max = 0;
+    card max1, max2, max3;
+    for (int i = 0; i < 13; i++)
+    {
+        if (c1[i]->value > max)
+        {
+            max = c1[i]->value;
+            max1 = *c1[i];
+        }
+    }
+}
+void maxCards(card c1[], card gift[])
+{
+    card max;
+    max.value = 0;
+    max.type = " ";
+
+    for (int j = 0; j < 3; j++)
+    {
+        for (int i = 0; i < 13; i++)
+        {
+            if (c1[i].value > max.value)
+            {
+                max = c1[i];
+
+                // Shift elements to the left
+                for (int j = i; j < 13; j++)
+                {
+                    c1[i] = c1[i + 1];
+                }
+            }
+        }
+        gift[j] = max;
+    }
+}
+
+void gift(Player &p1, Player &p2, Player &p3, Player &p4)
+{
+    card swap1[3], swap2[3], swap3[3], swap4[3];
+       
+    maxCards(p1.cardInHand, swap1);
+    maxCards(p2.cardInHand, swap2);
+    maxCards(p3.cardInHand, swap3);
+    maxCards(p4.cardInHand, swap4);
+    int c = 0;
+    for (int i = 10; i < 13; i++)
+    {
+        p1.cardInHand[i] = swap1[c];
+        p2.cardInHand[i] = swap2[c];
+        p3.cardInHand[i] = swap3[c];
+        p4.cardInHand[i] = swap4[c];
+        c++;
+    }
+}

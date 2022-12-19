@@ -32,7 +32,7 @@ int main(){
     }
     
   cout<<random <<endl;
-    shuffleCards(&top,p1,p2,p3,p4);
+   // shuffleCards(&top,p1,p2,p3,p4);
   
     
     for(int i = 0 ; i>13;i++){
