@@ -20,7 +20,7 @@ int main()
 
     AddPlayersInList(p1, p2, p3, p4, PlayerList);
     printH2R(PlayerList);
-    cout << "hello1" << endl;
+ 
     FillCardStack(&top);
     if (!isEmpty(&top))
         cout << "not empty" << endl;
@@ -30,19 +30,12 @@ int main()
         random = 1 + rand() % 4;
         cout << random << "   ";
     }
-    //  shuffleCards(&top,p1,p2,p3,p4);
+   
+      shuffleCards(&top,p1,p2,p3,p4 );
 
-    // for (int i = 0; i > 13; i++)
-    // {
-    //     cout << "value: " << p1.cardInHand[i].value << "type: " << p1.cardInHand[i].type << endl;
-    // }
-      shuffle(&top, cardArray, 52);
       distribute(cardArray,&p1,&p2,&p3,&p4);
 
-    // for (int i = 0; i < 52; i++)
-    // {
-    //     cout << cardArray[i].value << " " << cardArray[i].type << endl;
-    // }
-    cout << "tahiyye la verginie" << endl;
+   
+   
 }
 
