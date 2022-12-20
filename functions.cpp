@@ -54,165 +54,6 @@ void FillCardStack(card *top)
     }
     DisplayStack(top);
 }
-// void shuffleCards(card *sc, Player &p1, Player &p2, Player &p3, Player &p4)
-// {
-//     card *cp1[13];
-//     card *cp2[13];
-//     card *cp3[13];
-//     card *cp4[13];
-//      int j = 0;
-//       int j1 = 0;
-//        int j2 = 0;
-//         int j3 = 0;
-//     for (int i = 0; i < 52; i++)
-//     {
-
-//         if (i < 13)
-//         {
-
-//             cp1[j] = pop(sc, sc->value, sc->type);
-//             j++;
-//         }
-//         else if (i >= 13 && i < 26)
-//         {
-
-//             cp2[j1] = pop(sc, sc->value, sc->type);
-//             j1++;
-//         }
-//         else if (i >= 26 && i < 39)
-//         {
-
-//             cp3[j2] = pop(sc, sc->value, sc->type);
-//             j2++;
-//         }
-//         else if (i >= 39 && i < 52)
-//         {
-
-//             cp4[j3] = pop(sc, sc->value, sc->type);
-//             j3++;
-//         }
-//     }
-//     cout<<"hello"<<endl;
-//     int random;
-//     int i1 = 0, i2 = 0, i3 = 0, i4 = 0;
-//     int c1 = 0, c2 = 0, c3 = 0, c4 = 0;
-//     while (i1 < 13 || i2 < 13 || i3 < 13 || i4 < 13)
-//     {
-//         random = 1 + rand() % 4;
-
-//         if (random == 1)
-//         {
-//             if (i1 < 13)
-//             {
-//                 p1.cardInHand[i1] = *cp1[c1];
-//                 c1++;
-//                 i1++;
-//             }
-//             else if (i2 < 13)
-//             {
-//                 p2.cardInHand[i2] = *cp1[c1];
-//                 c1++;
-//                 i2++;
-//             }
-//             else if (i3 < 13)
-//             {
-//                 p2.cardInHand[i3] = *cp1[c1];
-//                 c1++;
-//                 i3++;
-//             }
-//             else if (i4 < 13)
-//             {
-//                 p2.cardInHand[i4] = *cp1[c1];
-//                 c1++;
-//                 i4++;
-//             }
-//         }
-//         else if (random == 2)
-//         {
-//             if (i1 < 13)
-//             {
-//                 p1.cardInHand[i1] = *cp2[c2];
-//                 c2++;
-//                 i1++;
-//             }
-//             else if (i2 < 13)
-//             {
-//                 p2.cardInHand[i2] = *cp2[c2];
-//                 c2++;
-//                 i2++;
-//             }
-//             else if (i3 < 13)
-//             {
-//                 p2.cardInHand[i3] = *cp2[c2];
-//                 c2++;
-//                 i3++;
-//             }
-//             else if (i4 < 13)
-//             {
-//                 p2.cardInHand[i4] = *cp2[c2];
-//                 c2++;
-//                 i4++;
-//             }
-//         }
-//         else if (random == 3)
-//         {
-//             if (i1 < 13)
-//             {
-//                 p1.cardInHand[i1] = *cp3[c3];
-//                 c3++;
-//                 i1++;
-//             }
-//             else if (i2 < 13)
-//             {
-//                 p2.cardInHand[i2] = *cp3[c3];
-//                 c3++;
-//                 i2++;
-//             }
-//             else if (i3 < 13)
-//             {
-//                 p2.cardInHand[i3] = *cp3[c3];
-//                 c3++;
-//                 i3++;
-//             }
-//             else if (i4 < 13)
-//             {
-//                 p2.cardInHand[i4] = *cp3[c3];
-//                 c3++;
-//                 i4++;
-//             }
-//         }
-//         else if (random == 4)
-//         {
-//             if (i1 < 13)
-//             {
-//                 p1.cardInHand[i1] = *cp4[c4];
-//                 c4++;
-//                 i1++;
-//             }
-//             else if (i2 < 13)
-//             {
-//                 p2.cardInHand[i2] = *cp4[c4];
-//                 c4++;
-//                 i2++;
-//             }
-//             else if (i3 < 13)
-//             {
-//                 p2.cardInHand[i3] = *cp4[c4];
-//                 c4++;
-//                 i3++;
-//             }
-//             else if (i4 < 13)
-//             {
-//                 p2.cardInHand[i4] = *cp4[c4];
-//                 c4++;
-//                 i4++;
-//             }
-//         }
-//     }
-//     cout<<"helloooo"<<endl;
-// }
-
-
 void maxCards(card c1[], card gift[])
 {
     card max;
@@ -241,7 +82,7 @@ void maxCards(card c1[], card gift[])
 void gift(Player &p1, Player &p2, Player &p3, Player &p4)
 {
     card swap1[3], swap2[3], swap3[3], swap4[3];
-       
+
     maxCards(p1.cardInHand, swap1);
     maxCards(p2.cardInHand, swap2);
     maxCards(p3.cardInHand, swap3);
@@ -257,23 +98,31 @@ void gift(Player &p1, Player &p2, Player &p3, Player &p4)
     }
 }
 
+void shuffle(card *c, card c1[], int length)
+{
+    card *temp;
+    card*tmp;
+    tmp->value = 0;
+    tmp->type = "";
+    temp->value = 0;
+    temp->type = "";
+    int randomIndex ;
 
-void shuffle(card *c,card c1[] ,int length ) {
-		card *temp;
-        temp->value = 0;
-        temp->type = "";
-		int randomIndex = 0;
+    for (int i = 0; i < 52; i++)
+    {
+        temp = pop(c, c->value, c->type);
 
-        for (int i = 0; i< 53;i++){
-            temp = pop(temp,temp->value,temp->type);
-            c1[i] = *temp;
-        }
-		for (int j = 0; j < length; j++) {
-			randomIndex = rand() % length;
-			*temp = c1[j];
-			c1[j] = c1[randomIndex];
-			c1[randomIndex] = * temp;
-		}
-		/*for (int i = 0; i < length; i++) {
-			cout << deck[i] << " ";
-		}*/
+        c1[i] = *temp;
+    }
+    for (int j = 0; j < length; j++)
+    {
+        randomIndex = rand() % length;
+        *tmp = c1[j];
+        c1[j] = c1[randomIndex];
+        c1[randomIndex] = *tmp;
+    }
+    for (int i = 0; i < length; i++)
+    {
+        cout << c1[i].value << " " << c1[i].type << endl;
+    }
+}
