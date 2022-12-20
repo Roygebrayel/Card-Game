@@ -24,7 +24,6 @@ int main()
     FillCardStack(&top);
     if (!isEmpty(&top))
         cout << "not empty" << endl;
-
     cout << "FillCardStack is done succesfully" << endl;
     for (int s = 0; s < 13; s++)
     {
@@ -37,7 +36,8 @@ int main()
     // {
     //     cout << "value: " << p1.cardInHand[i].value << "type: " << p1.cardInHand[i].type << endl;
     // }
-      shuffle(&top, cardArray, 20);
+      shuffle(&top, cardArray, 52);
+      distribute(cardArray,&p1,&p2,&p3,&p4);
 
     // for (int i = 0; i < 52; i++)
     // {
