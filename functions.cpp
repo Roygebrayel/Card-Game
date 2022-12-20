@@ -212,19 +212,7 @@ void FillCardStack(card *top)
 //     cout<<"helloooo"<<endl;
 // }
 
-card maxCards(card *c1[])
-{
-    int max = 0;
-    card max1, max2, max3;
-    for (int i = 0; i < 13; i++)
-    {
-        if (c1[i]->value > max)
-        {
-            max = c1[i]->value;
-            max1 = *c1[i];
-        }
-    }
-}
+
 void maxCards(card c1[], card gift[])
 {
     card max;
@@ -268,3 +256,18 @@ void gift(Player &p1, Player &p2, Player &p3, Player &p4)
         c++;
     }
 }
+
+
+void shuffle(card c,card c1[] ,int length ) {
+		card temp;
+		int randomIndex = 0;
+
+		for (int j = 0; j < length; j++) {
+			randomIndex = rand() % length;
+			temp = c1[j];
+			c1[j] = c1[randomIndex];
+			c1[randomIndex] = temp;
+		}
+		/*for (int i = 0; i < length; i++) {
+			cout << deck[i] << " ";
+		}*/
