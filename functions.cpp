@@ -258,15 +258,21 @@ void gift(Player &p1, Player &p2, Player &p3, Player &p4)
 }
 
 
-void shuffle(card c,card c1[] ,int length ) {
-		card temp;
+void shuffle(card *c,card c1[] ,int length ) {
+		card *temp;
+        temp->value = 0;
+        temp->type = "";
 		int randomIndex = 0;
 
+        for (int i = 0; i< 53;i++){
+            temp = pop(temp,temp->value,temp->type);
+            c1[i] = *temp;
+        }
 		for (int j = 0; j < length; j++) {
 			randomIndex = rand() % length;
-			temp = c1[j];
+			*temp = c1[j];
 			c1[j] = c1[randomIndex];
-			c1[randomIndex] = temp;
+			c1[randomIndex] = * temp;
 		}
 		/*for (int i = 0; i < length; i++) {
 			cout << deck[i] << " ";
