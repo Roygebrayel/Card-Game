@@ -101,12 +101,12 @@ void gift(Player &p1, Player &p2, Player &p3, Player &p4)
 void shuffle(card *c, card c1[], int length)
 {
     card *temp;
-    card*tmp;
+    card *tmp;
     tmp->value = 0;
     tmp->type = "";
     temp->value = 0;
     temp->type = "";
-    int randomIndex ;
+    int randomIndex;
 
     for (int i = 0; i < 52; i++)
     {
@@ -150,6 +150,192 @@ void distribute(card array[],Player *p1,Player *p2,Player *p3,Player *p4){
     }
 }
 
+void throwCard1(Player &P1, Player &P2, Player &P3, Player &P4, card *ctable[])
+{
+
+    ctable[0]->type = "diamonds";
+    ctable[0]->value = 5;
+    for (int i = 0; i < 13; i++)
+    {
+        int index1 = 0, index2 = 0, index3 = 0, index4 = 0;
+        int random = rand() % 13;
+        for (int i = 0; i < 13; i++)
+        {
+            if (P1.cardInHand[i].type == ctable[0]->type)
+            {
+                if (P1.cardInHand[i].value <= ctable[0]->value)
+                {
+                    *ctable[0] = P1.cardInHand[i];
+                    index1 = i;
+                    // i should delete the element from the card in hand array
+                }
+                else
+                {
+                    *ctable[0] = P1.cardInHand[i];
+                    index1 = i;
+                }
+            }
+            else // if the cards are not of the same type
+
+                if (P1.cardInHand[i].type == "spades" && P1.cardInHand[i].value == 12)
+                {
+                    *ctable[0] = P1.cardInHand[i];
+                    index1 = i;
+                }
+                else if (P1.cardInHand[i].type == "diamonds" && P1.cardInHand[i].value == 10)
+                {
+                    *ctable[0] = P1.cardInHand[i];
+                    index1 = i;
+                }
+                else if (P1.cardInHand[i].type == "hearts")
+                {
+                    *ctable[0] = P1.cardInHand[i];
+                    index1 = i;
+                }
+                else
+                {
+                    *ctable[0] = P1.cardInHand[random];
+                    index1 = i;
+                }
+        }
+            for(int i=index1 ;i<13-(index1+1);i++){
+                P1.cardInHand[i]=P1.cardInHand[index1+1];
+            }
+
+        // if the cards are of the same types
+        for (int i = 0; i < 13; i++)
+        {
+            if (P2.cardInHand[i].type == ctable[0]->type)
+            {
+                if (P2.cardInHand[i].value <= ctable[0]->value)
+                {
+                    *ctable[1] = P2.cardInHand[i];
+                    index2 = i;
+
+                    // i should delete the element from the card in hand array
+                }
+                else
+                {
+                    *ctable[1] = P2.cardInHand[i];
+                    index2 = i;
+                }
+            }
+            else // if the cards are not of the same type
+
+                if (P2.cardInHand[i].type == "spades" && P2.cardInHand[i].value == 12)
+                {
+                    *ctable[1] = P2.cardInHand[i];
+                    index2 = i;
+                }
+                else if (P2.cardInHand[i].type == "diamonds" && P2.cardInHand[i].value == 10)
+                {
+                    *ctable[1] = P2.cardInHand[i];
+                    index2 = i;
+                }
+                else if (P2.cardInHand[i].type == "hearts")
+                {
+                    *ctable[1] = P2.cardInHand[i];
+                    index2 = i;
+                }
+                else
+                {
+                    *ctable[1] = P2.cardInHand[random];
+                    index2 = i;
+                }
+        }
+         for(int i=index2 ;i<13-(index2+1);i++){
+                P2.cardInHand[i]=P2.cardInHand[i+1];
+            }
+        // if the cards are of the same types
+        for (int i = 0; i < 13; i++)
+        {
+            if (P3.cardInHand[i].type == ctable[0]->type)
+            {
+                if (P3.cardInHand[i].value <= ctable[0]->value)
+                {
+                    *ctable[2] = P3.cardInHand[i];
+                    index3 = i;
+
+                    // i should delete the element from the card in hand array
+                }
+                else
+                {
+                    *ctable[2] = P3.cardInHand[i];
+                    index3 = i;
+                }
+            }
+            else // if the cards are not of the same type
+
+                if (P3.cardInHand[i].type == "spades" && P3.cardInHand[i].value == 12)
+                {
+                    *ctable[2] = P3.cardInHand[i];
+                    index3 = i;
+                }
+                else if (P3.cardInHand[i].type == "diamonds" && P3.cardInHand[i].value == 10)
+                {
+                    *ctable[2] = P3.cardInHand[i];
+                    index3 = i;
+                }
+                else if (P3.cardInHand[i].type == "hearts")
+                {
+                    *ctable[2] = P3.cardInHand[i];
+                    index3 = i;
+                }
+                else
+                {
+                    *ctable[2] = P3.cardInHand[random];
+                    index3 = i;
+                }
+        }
+        for(int i=index3 ;i<13-(index3+1);i++){
+                P3.cardInHand[i]=P3.cardInHand[index3+1];
+            }
+        // if the cards are of the same types
+        for (int i = 0; i < 13; i++)
+        {
+            if (P4.cardInHand[i].type == ctable[0]->type)
+            {
+                if (P4.cardInHand[i].value <= ctable[0]->value)
+                {
+                    *ctable[3] = P4.cardInHand[i];
+                    index4 = i;
+
+                    // i should delete the element from the card in hand array
+                }
+                else
+                {
+                    *ctable[3] = P4.cardInHand[i];
+                    index4 = i;
+                }
+            }
+            else // if the cards are not of the same type
+
+                if (P4.cardInHand[i].type == "spades" && P4.cardInHand[i].value == 12)
+                {
+                    *ctable[3] = P4.cardInHand[i];
+                    index4 = i;
+                }
+                else if (P4.cardInHand[i].type == "diamonds" && P4.cardInHand[i].value == 10)
+                {
+                    *ctable[3] = P4.cardInHand[i];
+                    index4 = i;
+                }
+                else if (P4.cardInHand[i].type == "hearts")
+                {
+                    *ctable[3] = P4.cardInHand[i];
+                    index4 = i;
+                }
+                else
+                {
+                    *ctable[3] = P4.cardInHand[random];
+                    index4 = i;
+                }
+        }
+         for(int i=index4 ;i<13-(index4+1);i++){
+                P4.cardInHand[i]=P4.cardInHand[index4+1];
+            }
+    }
+}
 
 
 // void shuffleCards(card *sc, Player &p1, Player &p2, Player &p3, Player &p4)
