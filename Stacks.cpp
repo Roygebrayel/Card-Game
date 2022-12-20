@@ -6,6 +6,7 @@ using namespace std;
 struct card
 {
 	int value;
+
 	string type;
 	card *nextC;
 };
