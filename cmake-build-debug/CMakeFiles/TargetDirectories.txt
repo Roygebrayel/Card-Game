@@ -1,3 +1,0 @@
-C:/Users/Computop/CLionProjects/Card-Game/cmake-build-debug/CMakeFiles/Card_Game.dir
-C:/Users/Computop/CLionProjects/Card-Game/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Computop/CLionProjects/Card-Game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
